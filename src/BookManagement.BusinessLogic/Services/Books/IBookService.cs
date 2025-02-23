@@ -16,9 +16,13 @@ public interface IBookService
 
     Task<Result<PaginatedList<string>>> GetTitlesPopularityAsync(PaginationParams paginationParams);
 
+    Task<Result<PaginatedList<string>>> GetSoftDeletedBookTitlesAsync(PaginationParams paginationParams);
+
     Task<Result<long>> UpdateAync(long id, BookUpdateModel model);
 
     Task<Result> SoftDeleteAsync(long id);
 
     Task<Result> SoftDeleteBulkAsync(List<long> ids);
+
+    Task<Result> RestoreByTitleAsync(string title);
 }

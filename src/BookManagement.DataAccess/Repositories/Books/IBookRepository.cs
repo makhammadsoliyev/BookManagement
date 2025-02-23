@@ -11,5 +11,9 @@ public interface IBookRepository : IRepository<Book>
 
     Task<PaginatedList<string>> GetTitlesAsync(PaginationParams paginationParams);
 
+    Task<PaginatedList<string>> GetSoftDeletedTitlesAsync(PaginationParams paginationParams);
+
     Task IncrementViewsAsync(Expression<Func<Book, bool>> expression);
+
+    Task<bool> RestoreAsync(Expression<Func<Book, bool>> expression);
 }

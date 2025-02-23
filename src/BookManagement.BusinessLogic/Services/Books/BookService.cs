@@ -105,6 +105,11 @@ public class BookService(
         return await repository.GetTitlesAsync(paginationParams);
     }
 
+    public async Task<Result<PaginatedList<string>>> GetSoftDeletedBookTitlesAsync(PaginationParams paginationParams)
+    {
+        return await repository.GetSoftDeletedTitlesAsync(paginationParams);
+    }
+
     public async Task<Result<long>> UpdateAync(long id, BookUpdateModel model)
     {
         var validationResult = await updateValidator.ValidateModelsAsync(model);
@@ -150,6 +155,16 @@ public class BookService(
             return Result.Failure(BookErrors.NotFoundAny());
 
         await repository.RemoveRangeAsync(books);
+        await unitOfWork.SaveChangesAsync();
+
+        return Result.Success();
+    }
+
+    public async Task<Result> RestoreByTitleAsync(string title)
+    {
+        var isSuccess = await repository.RestoreAsync(book => book.Title == title);
+        if (!isSuccess)
+            return Result.Failure(BookErrors.NotFoundByTitle(title));
         await unitOfWork.SaveChangesAsync();
 
         return Result.Success();
