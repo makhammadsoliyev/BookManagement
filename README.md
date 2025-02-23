@@ -86,6 +86,7 @@ The **Book Management API** is a RESTful service built with ASP.NET Core that al
 - Uses **IdentityServer** for authentication.
 - JWT tokens required for accessing protected endpoints.
 - Roles: `Admin`, `User`.
+- **Admin credentials are located in `appsettings.json/appsettings.Developmenet.json`**.
 
 ### Register a New User
 
