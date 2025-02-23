@@ -7,7 +7,7 @@ The **Book Management API** is a RESTful service built with ASP.NET Core that al
 ## 🛠 Tech Stack
 
 - **ASP.NET Core 8**
-- **Entity Framework Core** (MySQL, SQL Server)
+- **Entity Framework Core** (SQL Server)
 - **IdentityServer** for authentication
 - **Swagger** for API documentation
 - **N-tier architecture**
