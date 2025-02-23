@@ -1,0 +1,21 @@
+services:
+  bookmanagement.api:
+    image: ${DOCKER_REGISTRY-}bookmanagementapi
+    container_name: BookManagement.Api
+    build:
+      context: .
+      dockerfile: src/BookManagement.Api/Dockerfile
+    depends_on:
+      - bookmanagement.db
+    environment:
+      - ConnectionStrings__Database=Server=bookmanagement.db,1433;User Id=sa;Password=Book2025!@#$;Database=book_managemnt_db;TrustServerCertificate=true;
+
+  bookmanagement.db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: BookManagement.Db
+    environment:
+      - MSSQL_SA_PASSWORD=Book2025!@#$
+      - ACCEPT_EULA=Y
+    ports:
+      - 5434:1433
+   
