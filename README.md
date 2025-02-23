@@ -128,7 +128,6 @@ This returns a JWT token to be used in `Authorization: Bearer <token>` header.
 | `GET`    | `/api/books/{title}`             | Get book by title         | User, Admin |
 | `GET`    | `/api/books`                     | Get paginated book titles | User, Admin |
 | `PUT`    | `/api/books/{id}`                | Update a book             | User, Admin |
-| `PUT`    | `/api/books/{title}`             | Update a book             | User, Admin |
 | `DELETE` | `/api/books/{id}`                | Soft delete a book        | User, Admin |
 | `DELETE` | `/api/books/bulk`                | Bulk delete books         | User, Admin |
 | `PUT`    | `/api/books/{title}/restore`     | Restore a soft-deleted book | Admin |
