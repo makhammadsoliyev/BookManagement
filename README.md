@@ -7,7 +7,7 @@ The **Book Management API** is a RESTful service built with ASP.NET Core that al
 ## 🛠 Tech Stack
 
 - **ASP.NET Core 8**
-- **Entity Framework Core** (MySQL, SQL Server)
+- **Entity Framework Core** (SQL Server)
 - **IdentityServer** for authentication
 - **Swagger** for API documentation
 - **N-tier architecture**
@@ -120,16 +120,18 @@ This returns a JWT token to be used in `Authorization: Bearer <token>` header.
 
 ### Books
 
-| Method   | Endpoint             | Description               | Role        |
-| -------- | -------------------- | ------------------------- | ----------- |
-| `POST`   | `/api/books`         | Add a new book            | User, Admin |
-| `POST`   | `/api/books/bulk`    | Add multiple books        | User, Admin |
-| `GET`    | `/api/books/{id}`    | Get book by ID            | User, Admin |
-| `GET`    | `/api/books/{title}` | Get book by title         | User, Admin |
-| `GET`    | `/api/books`         | Get paginated book titles | User, Admin |
-| `PUT`    | `/api/books/{id}`    | Update a book             | User, Admin |
-| `DELETE` | `/api/books/{id}`    | Soft delete a book        | User, Admin |
-| `DELETE` | `/api/books/bulk`    | Bulk delete books         | User, Admin |
+| Method   | Endpoint                         | Description               | Role        |
+| -------- | -------------------------------- | ------------------------- | ----------- |
+| `POST`   | `/api/books`                     | Add a new book            | User, Admin |
+| `POST`   | `/api/books/bulk`                | Add multiple books        | User, Admin |
+| `GET`    | `/api/books/{id}`                | Get book by ID            | User, Admin |
+| `GET`    | `/api/books/{title}`             | Get book by title         | User, Admin |
+| `GET`    | `/api/books`                     | Get paginated book titles | User, Admin |
+| `PUT`    | `/api/books/{id}`                | Update a book             | User, Admin |
+| `DELETE` | `/api/books/{id}`                | Soft delete a book        | User, Admin |
+| `DELETE` | `/api/books/bulk`                | Bulk delete books         | User, Admin |
+| `PUT`    | `/api/books/{title}/restore`     | Restore a soft-deleted book | Admin |
+| `GET`    | `/api/books/soft-deleted-books-titles` | Retrieve soft-deleted book titles | Admin |
 
 ### Users (Admin Only)
 
