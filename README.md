@@ -142,7 +142,7 @@ This returns a JWT token to be used in `Authorization: Bearer <token>` header.
 
 - Run the project and navigate to:
   ```
-  [https://localhost:18081/swagger](https://localhost:18081/swagger/index.html)
+  https://localhost:18081/swagger/index.html
   ```
 - The Swagger UI will show all available endpoints with request and response examples.
 
@@ -154,4 +154,8 @@ This project is licensed under the **MIT License**.
 
 Feel free to reach out if you have any questions!
 
+## 👤 Contact
 
+- **LinkedIn:** [makhammadsoliyev](https://www.linkedin.com/in/makhammadsoliyev)
+- **Telegram:** [@home3538](https://t.me/hope3538)
+- **Email:** makhammadsoliyev@gmail.com
