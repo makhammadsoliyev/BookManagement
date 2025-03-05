@@ -160,5 +160,5 @@ Feel free to reach out if you have any questions!
 ## 👤 Contact
 
 - **LinkedIn:** [makhammadsoliyev](https://www.linkedin.com/in/umidbek-makhammadsoliyev/)
-- **Telegram:** [@home3538](https://t.me/hope3538)
+- **Telegram:** [@hope3538](https://t.me/hope3538)
 - **Email:** makhammadsoliyev@gmail.com
