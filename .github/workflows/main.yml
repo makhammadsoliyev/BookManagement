@@ -21,5 +21,8 @@ jobs:
         with:
           compose-file: './docker-compose.yml'
           
+      - name: Restore NuGet packages
+        run: dotnet restore BookManagement.sln
+          
       - name: Build
         run: dotnet build BookManagement.sln -c Release --no-restore
