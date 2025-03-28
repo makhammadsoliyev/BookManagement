@@ -20,14 +20,6 @@ jobs:
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: './docker-compose.yml'
-                  
-      # - name: Install .NET SDK
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: '8.0.x'
-
-      # - name: Restore NuGet packages
-      #   run: dotnet restore
-
+          
       - name: Build
-        run: dotnet build -c Release --no-restore
+        run: dotnet build BookManagement.sln -c Release --no-restore
