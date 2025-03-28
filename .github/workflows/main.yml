@@ -27,3 +27,6 @@ jobs:
           
       - name: Build
         run: dotnet build BookManagement.sln -c Release --no-restore
+
+      - name: Tests
+        run: dotnet test BookManagement.sln -c Release --no-restore
