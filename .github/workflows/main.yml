@@ -2,16 +2,17 @@ name: BookManagementApi
 
 on:
   push:
-    branches:
-      - 'master'
+    branches: ['master', 'dev']
+    
   pull_request:
-    branches:
-      - 'master'
+    branches: ['master', 'dev']
+    
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Check out code
         uses: actions/checkout@v2
