@@ -14,7 +14,7 @@ builder.Services.AddExceptionHandlers();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGenWithAuth();
 
-var app = builder.Build()
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
