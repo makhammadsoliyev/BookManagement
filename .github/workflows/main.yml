@@ -17,16 +17,12 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Run docker-compose
+      - name: Set Up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Start Book Management Services
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: './docker-compose.yml'
-          
-      - name: Restore NuGet packages
-        run: dotnet restore BookManagement.sln
-          
-      - name: Build
-        run: dotnet build BookManagement.sln -c Release --no-restore
-
-      - name: Tests
-        run: dotnet test BookManagement.sln -c Release --no-build --no-restore
+          services: 'bookmanagement.api bookmanagement.db'
+          up-flags: '--build -d'
