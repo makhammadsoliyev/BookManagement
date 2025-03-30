@@ -51,4 +51,5 @@ jobs:
           up-flags: '--build -d'
           
       - name: Test with the dotnet CLI
-        run: dotnet test --solution './BookManagement/BookManagement.sln' --no-build
+        run: dotnet test --solution './BookManagement.sln'
+        
