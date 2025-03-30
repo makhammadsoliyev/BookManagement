@@ -41,7 +41,7 @@ jobs:
         with:
           dotnet-version: '8.0.x'
           
-      - name: Start Boook Management Services
+      - name: Start Book Management Services
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: './docker-compose.yml'
@@ -51,5 +51,5 @@ jobs:
           up-flags: '--build -d'
           
       - name: Test with the dotnet CLI
-        run: dotnet test --solution './BookManagement.sln'
+        run: dotnet test BookManagement.sln
         
